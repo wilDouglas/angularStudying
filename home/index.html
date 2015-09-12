@@ -1,0 +1,56 @@
+<div class="content" ng-controller="homeCtrl">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-3 col-md-offset-4">
+			<br>
+				<fieldset>
+					<legend>Cadastro de Pessoa</legend>
+					<form method="post">
+						<div class="form-group">
+							<label for="nome">Nome:</label>
+							<input id="nome" class="form-control" type="text" ng-model="nome">						
+						</div>
+						<div class="form-group">
+							<label for="idade">Idade:</label>
+							<input id="idade" class="form-control" type="number" ng-model="idade">
+						</div>
+						<div class="form-group">
+							<label for="cpf">CPF:</label>
+							<input id="cpf" class="form-control" type="number" ng-model="cpf">	
+						</div>
+						<button type="submit" class="btn btn-success" ng-click="addNome()">enviar</button>
+					</form>	
+				</fieldset>	
+			</div>
+		</div>
+		<br>
+		<div class="row">
+			<div class="col-md-6 col-md-offset-3">
+				<table class="table">
+					<thead>
+						<th>ID</th>
+						<th>Nome</th>
+						<th>Idade</th>
+						<th>CPF</th>
+					</thead>
+					<tbody>
+						<tr ng-repeat="pessoa in pessoas | orderBy: 'nome' | filter: nome">
+							<td>
+								{{pessoa.id}}
+							</td>
+							<td>
+								{{pessoa.nome}}
+							</td>
+							<td>
+								{{pessoa.idade}}
+							</td>
+							<td>
+								{{pessoa.cpf}}
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
