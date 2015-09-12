@@ -5,5 +5,5 @@
 var homeServices = angular.module('homeServices', []);
 
 homeServices.factory('PessoaList', ['$resource', function ($resource) {
-    return $resource("http://localhost/phpRest/pessoas", {}, {get: {method: 'GET', chache: false, isArray: true}});
+    return $resource("http://localhost/student/", {}, {get: {method: 'GET', chache: false, isArray: true}});
 }]);
