@@ -5,13 +5,13 @@
 var homeServices = angular.module('homeServices', []);
 
 homeServices.factory('PessoaList', ['$resource', function ($resource) {
-    return $resource("http://localhost/StudyingPhpRest/listpessoas", {},{
+    return $resource("http://localhost/studyingPhpRest/listpessoas", {},{
         get: {  method: 'GET', cache: false, isArray: true   }
    });
 }]);
 
 homeServices.factory("Pessoa",['$resource',function($resource){
-   return $resource("http://localhost/StudyingPhpRest/pessoa",{},{ 
+   return $resource("http://localhost/studyingPhpRest/pessoa",{},{ 
        save: {  method: 'POST', cache: false, isArray: false    }
    });
 }]);
